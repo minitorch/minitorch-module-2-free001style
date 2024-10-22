@@ -24,7 +24,7 @@ def test_create(t1: List[float]) -> None:
 @pytest.mark.task2_3
 @pytest.mark.parametrize("fn", one_arg)
 def test_one_args(
-    fn: Tuple[str, Callable[[float], float], Callable[[Tensor], Tensor]], t1: Tensor
+        fn: Tuple[str, Callable[[float], float], Callable[[Tensor], Tensor]], t1: Tensor
 ) -> None:
     "Test one-arg functions compared to floats"
     name, base_fn, tensor_fn = fn
@@ -37,8 +37,8 @@ def test_one_args(
 @pytest.mark.task2_3
 @pytest.mark.parametrize("fn", two_arg)
 def test_two_args(
-    fn: Tuple[str, Callable[[float, float], float], Callable[[Tensor, Tensor], Tensor]],
-    ts: Tuple[Tensor, Tensor],
+        fn: Tuple[str, Callable[[float, float], float], Callable[[Tensor, Tensor], Tensor]],
+        ts: Tuple[Tensor, Tensor],
 ) -> None:
     name, base_fn, tensor_fn = fn
     t1, t2 = ts
@@ -51,7 +51,7 @@ def test_two_args(
 @pytest.mark.task2_4
 @pytest.mark.parametrize("fn", one_arg)
 def test_one_derivative(
-    fn: Tuple[str, Callable[[float], float], Callable[[Tensor], Tensor]], t1: Tensor
+        fn: Tuple[str, Callable[[float], float], Callable[[Tensor], Tensor]], t1: Tensor
 ) -> None:
     "Test the gradient of a one-arg tensor function"
     name, _, tensor_fn = fn
@@ -89,8 +89,8 @@ def test_grad_size() -> None:
 @pytest.mark.task2_4
 @pytest.mark.parametrize("fn", red_arg)
 def test_grad_reduce(
-    fn: Tuple[str, Callable[[Iterable[float]], float], Callable[[Tensor], Tensor]],
-    t1: Tensor,
+        fn: Tuple[str, Callable[[Iterable[float]], float], Callable[[Tensor], Tensor]],
+        t1: Tensor,
 ) -> None:
     "Test the grad of a tensor reduce"
     name, _, tensor_fn = fn
@@ -101,8 +101,8 @@ def test_grad_reduce(
 @pytest.mark.task2_4
 @pytest.mark.parametrize("fn", two_arg)
 def test_two_grad(
-    fn: Tuple[str, Callable[[float, float], float], Callable[[Tensor, Tensor], Tensor]],
-    ts: Tuple[Tensor, Tensor],
+        fn: Tuple[str, Callable[[float, float], float], Callable[[Tensor, Tensor], Tensor]],
+        ts: Tuple[Tensor, Tensor],
 ) -> None:
     name, _, tensor_fn = fn
     t1, t2 = ts
@@ -113,8 +113,8 @@ def test_two_grad(
 @pytest.mark.task2_4
 @pytest.mark.parametrize("fn", two_arg)
 def test_two_grad_broadcast(
-    fn: Tuple[str, Callable[[float, float], float], Callable[[Tensor, Tensor], Tensor]],
-    ts: Tuple[Tensor, Tensor],
+        fn: Tuple[str, Callable[[float, float], float], Callable[[Tensor, Tensor], Tensor]],
+        ts: Tuple[Tensor, Tensor],
 ) -> None:
     "Test the grad of a two argument function"
     name, base_fn, tensor_fn = fn
